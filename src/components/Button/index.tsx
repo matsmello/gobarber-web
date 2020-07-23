@@ -1,7 +1,8 @@
 import React, {FC} from 'react'
+import { Container } from './styles'
 
 const Button: FC  = () => {
-  return <button>enviar</button>
+  return <Container><button>enviar</button></Container>
 }
 
 export default Button
