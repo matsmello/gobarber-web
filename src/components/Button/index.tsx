@@ -1,7 +1,9 @@
-import React, {FC} from 'react'
+import React, {ButtonHTMLAttributes} from 'react'
 import { Container } from './styles'
 
-const Button: FC  = () => {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {}
+
+const Button: React.FC<ButtonProps> = () => {
   return <Container><button>enviar</button></Container>
 }
 
