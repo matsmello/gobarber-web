@@ -11,8 +11,8 @@ interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
 const Input: React.FC<InputProps> = ({name, icon: Icon, ...props}) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const {fieldName, defaultValue, error, registerField} = useField(name);
-  const [isFilled, setIsFilled] = useState(false);
 
+  const [isFilled, setIsFilled] = useState(false);
   const [isFocused, setIsFocused] = useState(false);
 
   const handleInputBlur = useCallback(() => {
@@ -33,7 +33,7 @@ const Input: React.FC<InputProps> = ({name, icon: Icon, ...props}) => {
     })
   }, [fieldName, registerField])
 
-  return <Container isFilled={isFilled} isFocused={isFocused}>
+  return <Container isErrored={!!error} isFilled={isFilled} isFocused={isFocused}>
      {Icon && <Icon size={20} />}
       <input
         onFocus={handleInputFocus}
