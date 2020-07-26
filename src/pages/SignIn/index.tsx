@@ -1,4 +1,4 @@
-import React, {useRef, useCallback} from "react";
+import React, {useRef, useCallback, useContext} from "react";
 import { Container, Content, Background } from "./styles";
 import logoImg from "./../../assets/logo.svg";
 import { FiLogIn, FiMail, FiLock } from "react-icons/fi";
@@ -8,6 +8,7 @@ import {Form} from '@unform/web';
 import {FormHandles} from '@unform/core';
 import * as Yup from 'yup';
 import getValidationErrors from './../../utils/getValidationsErrors'
+import AuthContext from "../../context/AuthContext";
 
 const SignIn: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
@@ -31,7 +32,10 @@ const SignIn: React.FC = () => {
     }
   }, []);
 
-  return (<Container>
+  const auth = useContext(AuthContext);
+
+  return (
+  <Container>
     <Content>
       <img src={logoImg} alt="GoBarber" />
       <Form ref={formRef} onSubmit={handleSubmit}>
