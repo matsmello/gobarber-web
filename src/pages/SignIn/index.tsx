@@ -10,6 +10,7 @@ import * as Yup from "yup";
 import getValidationErrors from "./../../utils/getValidationsErrors";
 import { useAuth } from "../../hooks/auth";
 import { useToast } from "../../hooks/toast";
+import { Link } from "react-router-dom";
 
 interface SignInFormData {
   email: string;
@@ -73,10 +74,10 @@ const SignIn: React.FC = () => {
           <Button type="submit">Entrar</Button>
           <a href="forgot">Esqueci minha senha</a>
         </Form>
-        <a href="">
+        <Link to="/signup">
           <FiLogIn />
           Criar conta
-        </a>
+        </Link>
       </Content>
 
       <Background />
