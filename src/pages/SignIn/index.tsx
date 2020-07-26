@@ -8,7 +8,7 @@ import { Form } from "@unform/web";
 import { FormHandles } from "@unform/core";
 import * as Yup from "yup";
 import getValidationErrors from "./../../utils/getValidationsErrors";
-import { AuthContext } from "../../context/AuthContext";
+import { useAuth } from "../../context/AuthContext";
 
 interface SignInFormData {
   email: string;
@@ -17,7 +17,7 @@ interface SignInFormData {
 
 const SignIn: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
-  const { signIn, user } = useContext(AuthContext);
+  const { signIn, user } = useAuth();
 
   const handleSubmit = useCallback(
     async (data: SignInFormData): Promise<void> => {
