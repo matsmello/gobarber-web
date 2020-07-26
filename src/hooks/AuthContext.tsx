@@ -1,6 +1,6 @@
 import React, { useCallback, useState, useContext } from "react";
 import { createContext } from "react";
-import api from "./../services/api";
+import api from "../services/api";
 
 interface Credentials {
   password: string;
